@@ -8,6 +8,8 @@
 </head>
 <body>
     <form action="../../PengaduanController.php" method="POST">
+        <label for="tgl">Tanggal</label>
+        <input type="date" name="tgl" id="tgl" required>
         <label for="nik">NIK</label>
         <input type="text" name="nik" id="nik" required>
         <label for="laporan">Laporan</label>

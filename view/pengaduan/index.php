@@ -1,8 +1,6 @@
 <?php
 include '../../PengaduanController.php';
 $index = $pengaduan->index();
-
-var_dump($result);
 ?>
 
 <!DOCTYPE html>
@@ -16,27 +14,24 @@ var_dump($result);
 <body>
     <h1>List Pengaduan Masyarakat</h1>
     <?php if ($index != null) : ?>
-        <? foreach ($index as $i) : ?>
-        <div class="card">
-            <p>Tanggal : </p><br>
-            <p><?= $i->tgl_pengaduan ?></p><br>
-            <p>NIK : </p><br>
-            <p><?= $i->nik ?></p><br>
-            <p>Laporan : </p><br>
-            <p><?= $i->isi_laporan ?></p><br>
-            <p>Foto : </p><br>
-            <p><?= $i->foto ?></p><br>
-            <p>Status : </p><br>
-            <?php if ($i->status == 0) : ?>
-                <p>Belum diproses</p>
-            <?php elseif ($i->status == 'proses') : ?>
-                <p>Sedang diproses</p>
-            <?php elseif ($i->status == 'selesai') : ?>
-                <p>Selsai diproses</p>
-            <?php endif ; ?>
-            <p><?= $i->status ?></p><br>
+        <?php $no = 1; foreach ($index as $data) : ?>
+        <div>
+            <li><?= $no++; ?>. Tanggal : <?= $data->tgl_pengaduan ?></li>            
+            <li>NIK : <?= $data->nik ?></li>            
+            <li>Laporan : <?= $data->isi_laporan ?></li>        
+            <li>Foto : <?= $data->foto ?></li>            
+            <li>Status : 
+            <?php if ($data->status == 0) : ?>
+                Belum diproses
+            <?php elseif ($data->status == 'proses') : ?>
+                Sedang diproses
+            <?php elseif ($data->status == 'selesai') : ?>
+                Selesai diproses
+            <?php endif ; ?>  
+            </li>
+            <br>          
         </div>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     <?php else : ?>
         <h3>List Pengaduan Masih Kosong</h3>
     <?php endif; ?>

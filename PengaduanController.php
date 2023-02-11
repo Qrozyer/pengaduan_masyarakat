@@ -1,8 +1,8 @@
 <?php
 
-include 'ConnectPDO.php';
+include 'koneksi.php';
 
-class PengaduanController extends ConnectPDO {
+class PengaduanController extends Koneksi {
     public function index()
     {
         /**
@@ -28,7 +28,7 @@ class PengaduanController extends ConnectPDO {
          * Mengajukan pengaduan baru
          */
 
-        $tgl        = '2023-02-02';
+        $tgl        = $request['tgl'];
         $nik        = $request['nik'];
         $laporan    = $request['laporan'];
         $foto       = $request['foto'];
