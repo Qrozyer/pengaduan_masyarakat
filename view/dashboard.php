@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!$_SESSION['auth']) {
-    header('Location: masyarakat/index.php');
+    header('Location: masyarakat/register.php');
 }
 
 ?>

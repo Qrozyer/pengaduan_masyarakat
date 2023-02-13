@@ -15,5 +15,6 @@
 
         <input type="submit" name="login" value="Masuk">
     </form>
+    <a href="register.php">Register</a>
 </body>
 </html>

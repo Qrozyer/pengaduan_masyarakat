@@ -23,5 +23,6 @@
 
         <input type="submit" name="register" value="Daftar">
     </form>
+    <a href="login.php">Login</a>
 </body>
 </html>

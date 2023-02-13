@@ -1,5 +1,5 @@
 <?php
-include '../../PengaduanController.php';
+include '../../pengaduancontroller.php';
 $index = $pengaduan->index();
 ?>
 
@@ -13,6 +13,8 @@ $index = $pengaduan->index();
 </head>
 <body>
     <h1>List Pengaduan Masyarakat</h1>
+    <a href="create.php">Tambah Data</a>
+    <br><br>
     <?php if ($index != null) : ?>
         <?php $no = 1; foreach ($index as $data) : ?>
         <div>
@@ -28,6 +30,13 @@ $index = $pengaduan->index();
             <?php elseif ($data->status == 'selesai') : ?>
                 Selesai diproses
             <?php endif ; ?>  
+            </li>
+            <li>
+            <a href="edit.php?id=<?= $data->id_pengaduan; ?>">Ubah</a>
+            <form action="../../pengaduancontroller.php" method="POST">
+                <input type="hidden" name="id" value="<?= $data->id_pengaduan; ?>">
+                <input type="submit" name="destroy" value="Hapus">
+            </form>
             </li>
             <br>          
         </div>
