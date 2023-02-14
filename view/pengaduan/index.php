@@ -32,7 +32,7 @@ $index = $pengaduan->index();
             <?php endif ; ?>  
             </li>
             <li>
-            <a href="edit.php?id=<?= $data->id_pengaduan; ?>">Ubah</a>
+            <a href="edit.php?id=<?php echo $data->id_pengaduan; ?>">Ubah</a>
             <form action="../../pengaduancontroller.php" method="POST">
                 <input type="hidden" name="id" value="<?= $data->id_pengaduan; ?>">
                 <input type="submit" name="destroy" value="Hapus">

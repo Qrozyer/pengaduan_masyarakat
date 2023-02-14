@@ -58,7 +58,7 @@ class AuthController extends Koneksi {
 
                     echo "<script>
                     alert('Berhasil mendaftarkan user')
-                    window.location.href='view/masyarakat/index.php'
+                    window.location.href='view/masyarakat/login.php'
                     </script>";
                 } else {
                     echo "<script>
@@ -107,7 +107,7 @@ class AuthController extends Koneksi {
         
         echo "<script>
             alert('Telah berhasil logout!')
-            window.location.href='view/masyarakat/index.php'
+            window.location.href='view/masyarakat/login.php'
             </script>";
     }
 }
