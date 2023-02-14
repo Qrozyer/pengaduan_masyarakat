@@ -7,22 +7,22 @@
     <title>Registrasi User</title>
 </head>
 <body>
+    <h1>Formulir Pendaftaran</h1>
     <form action="../../authcontroller.php" method="POST">
-        <label for="nik">NIK</label>
-        <input type="text" name="nik" id="nik" required>
-        <label for="nama">Nama</label>
-        <input type="text" name="nama" id="nama" required>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" required>
-        <label for="telp">Telepon</label>
-        <input type="text" name="telp" id="telp" required>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-        <label for="confirm_password">Konfirmasi Password</label>
-        <input type="password" name="confirm_password" id="confirm_password" required>
-
-        <input type="submit" name="register" value="Daftar">
+        <li><label for="nik">NIK</label></li>
+        <li><input type="text" name="nik" id="nik" required></li>
+        <li><label for="nama">Nama</label></li>
+        <li><input type="text" name="nama" id="nama" required></li>
+        <li><label for="username">Username</label></li>
+        <li><input type="text" name="username" id="username" required></li>
+        <li><label for="telp">Telepon</label></li>
+        <li><input type="text" name="telp" id="telp" required></li>
+        <li><label for="password">Password</label></li>
+        <li><input type="password" name="password" id="password" required></li>
+        <li><label for="confirm_password">Konfirmasi Password</label></li>
+        <li><input type="password" name="confirm_password" id="confirm_password" required></li>
+        <li><input type="submit" name="register" value="Daftar"></li>
     </form>
-    <a href="login.php">Login</a>
+    <p>Sudah punya akun, ingin login?>>><a href="login.php">Login</a></p>    
 </body>
 </html>

@@ -7,14 +7,14 @@
     <title>Login User</title>
 </head>
 <body>
+    <h1>Form Login</h1>
     <form action="../../authcontroller.php" method="POST">
-        <label for="nik">NIK</label>
-        <input type="text" name="nik" id="nik" required>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-
-        <input type="submit" name="login" value="Masuk">
+        <li><label for="nik">NIK</label></li>
+        <li><input type="text" name="nik" id="nik" required></li>
+        <li><label for="password">Password</label></li>
+        <li><input type="password" name="password" id="password" required></li>
+        <li><input type="submit" name="login" value="Masuk"></li>
     </form>
-    <a href="register.php">Register</a>
+    <p>Belum punya akun, ingin daftar? >>><a href="register.php">Register</a></p>
 </body>
 </html>
