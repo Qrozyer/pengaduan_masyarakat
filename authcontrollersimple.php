@@ -14,10 +14,14 @@ class AuthController extends Koneksi {
         if($password == $confirm_password){
             $query = "INSERT INTO masyarakat (nik, nama, username, password, telp) VALUES ('$nik', '$nama', '$username', '$password', '$telp')";
             $register = $this->pdo->prepare($query);
-            $register->execute();                  
+            $register->execute();      
+            session_start();         
+            $_SESSION['notif'] = "<h4>berhasil register</h4>";
+            header('Location: view/authsimple/login.php');
         }else{
+            session_start();
+            $_SESSION['notif'] = "<h4>password tidak sesuai</h4>";
             header('Location: view/authsimple/register.php');
-            echo "password tidak sesuai";
         }
     }
 
@@ -34,14 +38,17 @@ class AuthController extends Koneksi {
             if($nik_result->password == $password){
                 session_start();
                 $_SESSION['auth'] = $nik_result->nama;
+                $_SESSION['notif'] = "<h4>anda berhasil login</h4>";
                 header('Location: view/authsimple/index.php');
             }else{
+                session_start();
+                $_SESSION['notif'] = "<h4>password tidak sesuai</h4>";
                 header('Location: view/authsimple/login.php');
-                echo "password tidak sesuai";
             }
         } else{
+            session_start();
+            $_SESSION['notif'] = "<h4>gagal login</h4>";
             header('Location: view/authsimple/login.php');
-            echo "gagal login";
         }                      
     }
 
@@ -51,11 +58,8 @@ class AuthController extends Koneksi {
         $_SESSION = [];
         session_unset();
         session_destroy();
-        
-        echo "<script>
-            alert('Telah berhasil logout!')
-            window.location.href='view/authsimple/login.php'
-            </script>";
+                
+        header('Location: view/authsimple/login.php');
     }
 }
 

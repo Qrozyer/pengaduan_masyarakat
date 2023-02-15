@@ -1,3 +1,9 @@
+<?php
+session_start();
+if ($_SESSION['auth']) {
+    header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,9 @@
     <title>Login User</title>
 </head>
 <body>
+    <?php if ($_SESSION['notif']){
+        echo $_SESSION['notif'];
+    }?>
     <h1>Form Login</h1>
     <form action="../../authcontrollersimple.php" method="POST">
         <li><label for="nik">NIK</label></li>

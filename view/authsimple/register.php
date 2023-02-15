@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi User</title>
 </head>
-<body>
+<body>    
     <h1>Formulir Pendaftaran</h1>
     <form action="../../authcontrollersimple.php" method="POST">
         <li><label for="nik">NIK</label></li>

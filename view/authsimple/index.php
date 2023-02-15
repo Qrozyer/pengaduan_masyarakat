@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!$_SESSION['auth']) {
-    header('Location: register.php');
+    header('Location: login.php');
 }
 ?>
 <!DOCTYPE html>
@@ -12,10 +12,12 @@ if (!$_SESSION['auth']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 </head>
 <body>
-    <h1>ANDA BERHASIL LOGIN</h1>
+    <?php if ($_SESSION['notif']){
+        echo $_SESSION['notif'];
+    }?>    
     <?= "Selamat Datang, " . $_SESSION['auth'] ?>
-    <p>Lanjut ke lembar pengaduan? >>> <a href="pengaduan/index.php">Lembar Pengaduan</a></p>
-    <form action="../authcontroller.php" method="post">
+    <p>Lanjut ke lembar pengaduan? >>> <a href="../pengaduan/index.php">Lembar Pengaduan</a></p>
+    <form action="../../authcontrollersimple.php" method="post">
         <input type="submit" name="logout" value="keluar">
     </form>
 </body>
