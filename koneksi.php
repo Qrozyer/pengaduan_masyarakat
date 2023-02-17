@@ -30,3 +30,5 @@ class Koneksi {
 }
 
 $db = new Koneksi();
+
+?>

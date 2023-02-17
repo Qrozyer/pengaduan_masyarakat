@@ -5,6 +5,7 @@ if (isset($_SESSION['auth'])) {
 }else{
     echo "";
 }
+// var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +22,12 @@ if (isset($_SESSION['auth'])) {
         echo "";
     }?>
     <h1>Form Login</h1>
-    <form action="../../authcontrollersimple.php" method="POST">
-        <li><label for="nik">NIK</label></li>
-        <li><input type="text" name="nik" id="nik" required></li>
+    <form action="../../petugascontroller.php" method="POST">
+        <li><label for="username">Username</label></li>
+        <li><input type="text" name="username" id="username" required></li>
         <li><label for="password">Password</label></li>
         <li><input type="password" name="password" id="password" required></li>
         <li><input type="submit" name="login" value="Masuk"></li>
     </form>
-    <p>Belum punya akun, ingin daftar? >>><a href="register.php">Register</a></p>
 </body>
 </html>

@@ -50,7 +50,7 @@ class AuthController extends Koneksi {
                 if ($password == $confirm_password) {
 
                     $hash_password = password_hash($password, PASSWORD_DEFAULT);
-                    // $encrypted_password = crypt($password, $hash_password);
+                    $encrypted_password = crypt($password, $hash_password);
 
                     $query = "INSERT INTO masyarakat (nik, nama, username, password, telp) VALUES ('$nik', '$nama', '$username', '$hash_password', '$telp')";
                     $register = $this->pdo->prepare($query);
@@ -125,3 +125,5 @@ if (isset($_POST['login'])) {
 if (isset($_POST['logout'])) {
     $masyarakat->logout();
 }
+
+?>

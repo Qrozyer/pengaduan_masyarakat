@@ -104,3 +104,5 @@ if (isset($_POST['update'])) {
 if (isset($_POST['destroy'])) {           
     $pengaduan->destroy($_POST['id']);
 }
+
+?>

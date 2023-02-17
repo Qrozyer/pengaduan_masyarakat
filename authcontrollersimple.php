@@ -58,7 +58,6 @@ class AuthController extends Koneksi {
         $_SESSION = [];
         session_unset();
         session_destroy();
-                
         header('Location: view/authsimple/login.php');
     }
 }
@@ -76,3 +75,5 @@ if (isset($_POST['login'])) {
 if (isset($_POST['logout'])) {
     $masyarakat->logout();
 }
+
+?>
