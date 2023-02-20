@@ -31,13 +31,21 @@ class PetugasController extends Koneksi {
         }                      
     }
 
-    public function logout()
-    {
+    public function logout(){
         session_start();
         $_SESSION = [];
         session_unset();
         session_destroy();
         header('Location: view/petugas/login.php');
+    }
+
+    public function index(){
+        $query = "SELECT * FROM pengaduan";
+        $index = $this->pdo->prepare($query);
+        $index->execute();
+        $result = $index->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
     }
 }
 

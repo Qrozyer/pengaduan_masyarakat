@@ -2,7 +2,6 @@
 include '../../pengaduancontroller.php';
 $index = $pengaduan->index();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
