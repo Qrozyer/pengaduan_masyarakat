@@ -1,6 +1,6 @@
 <?php
 
-include 'koneksi.php';
+include_once 'koneksi.php';
 
 class PengaduanController extends Koneksi {
     public function index()
@@ -47,6 +47,13 @@ class PengaduanController extends Koneksi {
     public function show($id)
     {
         // Menampilkan data tertentu
+        $query = "SELECT * FROM pengaduan WHERE id_pengaduan = $id";
+        $show = $this->pdo->prepare($query);
+        $show->execute();
+        $result = $show->fetch(PDO::FETCH_OBJ);
+
+        return $result;
+
     }
 
     public function edit($id)

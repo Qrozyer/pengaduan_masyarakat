@@ -1,10 +1,10 @@
 <?php
-include '../../petugascontroller.php';
+include '../../pengaduancontroller.php';
 session_start();
 if (!$_SESSION['auth']) {
     header('Location: login.php');
 }
-$index = $petugas->index();
+$index = $pengaduan->index();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,18 +31,11 @@ $index = $petugas->index();
             <li><?= $no++; ?>. Tanggal : <?= $data->tgl_pengaduan ?></li>            
             <li>NIK : <?= $data->nik ?></li>            
             <li>Laporan : <?= $data->isi_laporan ?></li>        
-            <li>Foto : <?= $data->foto ?></li>            
-            <li>Status : 
-            <?php if ($data->status == 0) : ?>
-                Belum diproses
-            <?php elseif ($data->status == 'proses') : ?>
-                Sedang diproses
-            <?php elseif ($data->status == 'selesai') : ?>
-                Selesai diproses
-            <?php endif ; ?>  
-            </li>
             <li>
             <a href="../tanggapan/create.php?id=<?php echo $data->id_pengaduan; ?>">Tanggapan</a>
+            </li>
+            <li>
+            <a href="../tanggapan/index.php?id=<?php echo $data->id_pengaduan; ?>">Detail</a>
             </li>
             <br>          
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-include 'koneksi.php';
+include_once 'koneksi.php';
 
 class PetugasController extends Koneksi {
 
@@ -41,12 +41,19 @@ class PetugasController extends Koneksi {
     }
 
     public function index(){
-        $query = "SELECT * FROM pengaduan";
+        $query = "SELECT * FROM petugas";
         $index = $this->pdo->prepare($query);
         $index->execute();
         $result = $index->fetchAll(PDO::FETCH_OBJ);
 
+        return $result;
+    }
 
+    public function show($id_petugas){
+        $query = "SELECT * FROM petugas WHERE id_pengguna = $id_petugas";
+        $show = $this->pdo->prepare($query);
+        $show->execute();
+        $result = $show->fetch(PDO::FETCH_OBJ);
 
         return $result;
     }
