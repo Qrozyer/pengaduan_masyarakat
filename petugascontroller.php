@@ -17,6 +17,7 @@ class PetugasController extends Koneksi {
             if($username_result->password == $password){
                 session_start();
                 $_SESSION['auth'] = $username_result->nama_petugas;
+                $_SESSION['id_petugas'] = $username_result->id_pengguna;
                 $_SESSION['notif'] = "<h4>anda berhasil login</h4>";
                 header('Location: view/petugas/index.php');
             }else{
@@ -44,6 +45,8 @@ class PetugasController extends Koneksi {
         $index = $this->pdo->prepare($query);
         $index->execute();
         $result = $index->fetchAll(PDO::FETCH_OBJ);
+
+
 
         return $result;
     }

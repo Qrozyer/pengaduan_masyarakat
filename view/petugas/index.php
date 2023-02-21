@@ -21,11 +21,10 @@ $index = $petugas->index();
         echo "";
     }?>  
     <?= "Selamat Datang, " . $_SESSION['auth'] ?>
-    <br><br>
     <form action="../../petugascontroller.php" method="post">
-        <input type="submit" name="logout" value="keluar">
+        <input type="submit" name="logout" value="keluar???">
     </form>
-
+    <br><br>
     <?php if ($index != null) : ?>
         <?php $no = 1; foreach ($index as $data) : ?>
         <div>
